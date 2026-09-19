@@ -1,0 +1,85 @@
+{
+  "model_type": "CatBoostClassifier + CalibratedClassifierCV(isotonic)",
+  "n_samples": 15000,
+  "feature_columns": [
+    "decline_code",
+    "issuing_bank",
+    "bin_country",
+    "card_type",
+    "card_network",
+    "current_gateway",
+    "invoice_amount_usd",
+    "day_of_month",
+    "day_of_week",
+    "hour_of_day",
+    "is_payday_proximity",
+    "is_banking_settlement_window",
+    "retry_attempt_number",
+    "elapsed_days_since_first_decline"
+  ],
+  "cat_features": [
+    "decline_code",
+    "issuing_bank",
+    "bin_country",
+    "card_type",
+    "card_network",
+    "current_gateway"
+  ],
+  "numeric_features": [
+    "invoice_amount_usd",
+    "day_of_month",
+    "day_of_week",
+    "hour_of_day",
+    "is_payday_proximity",
+    "is_banking_settlement_window",
+    "retry_attempt_number",
+    "elapsed_days_since_first_decline"
+  ],
+  "cv_k": 5,
+  "metrics": {
+    "roc_auc": 0.8356,
+    "log_loss": 0.3988,
+    "ece_uncalibrated": 0.0105,
+    "ece_calibrated": 0.0,
+    "brier_score": 0.1306
+  },
+  "fold_metrics": [
+    {
+      "fold": 1,
+      "roc_auc": 0.8430043431893997,
+      "log_loss": 0.39212034745379987,
+      "ece": 2.6626848873926672e-17,
+      "brier_score": 0.12872026691844504
+    },
+    {
+      "fold": 2,
+      "roc_auc": 0.8290129076198798,
+      "log_loss": 0.4021764101875383,
+      "ece": 2.0556473190325163e-17,
+      "brier_score": 0.1321202234195499
+    },
+    {
+      "fold": 3,
+      "roc_auc": 0.8376212394949144,
+      "log_loss": 0.3913464373854749,
+      "ece": 1.7745064676925418e-17,
+      "brier_score": 0.12691443163537142
+    },
+    {
+      "fold": 4,
+      "roc_auc": 0.8353846856725147,
+      "log_loss": 0.39671212892794994,
+      "ece": 4.165186714052046e-17,
+      "brier_score": 0.12967502356622554
+    },
+    {
+      "fold": 5,
+      "roc_auc": 0.8235629873294347,
+      "log_loss": 0.4118895095908685,
+      "ece": 1.2915594519805987e-17,
+      "brier_score": 0.13537311329351595
+    }
+  ],
+  "optimal_threshold": 0.2534,
+  "trained_at_utc": "2026-09-18T19:22:43.741265"
+}

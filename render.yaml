@@ -1,0 +1,8 @@
+services:
+  - type: web
+    name: churn-retry-backend
+    runtime: docker
+    plan: free
+    region: oregon
+    healthCheckPath: /health
+    autoDeploy: true
